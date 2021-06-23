@@ -7,15 +7,15 @@ inputElement.onchange = function (event) {
 
   for (let i = 0; i < fileList.length; i++) {
     const file = fileList[i];
-    myFileReader(file, i, arrayOfImages);
+    fileReaderFactory(file, arrayOfImages[i]);
   }
 };
 
-function myFileReader(file, index, arrayOfImages) {
+function fileReaderFactory(file, arrayOfImageRef) {
   let reader = new FileReader();
 
   reader.onload = function () {
-    arrayOfImages[index] = reader.result;
+    arrayOfImageRef = reader.result;
     checkIfAllImagesReady(arrayOfImages)
       ? console.log(arrayOfImages)
       : console.log("Images are still not ready...");
