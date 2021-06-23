@@ -12,6 +12,8 @@ inputElement.onchange = function (event) {
       arrayOfImages[i] = result;
       if (++counter == fileList.length)
         console.log("All images processed:", arrayOfImages);
+      else
+        console.log("Images are being processed. One image has been finished.");
     });
   }
 };
